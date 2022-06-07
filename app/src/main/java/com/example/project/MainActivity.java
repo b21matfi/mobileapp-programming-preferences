@@ -13,6 +13,8 @@ import androidx.appcompat.widget.Toolbar;
 public class MainActivity extends AppCompatActivity {
     TextView sharedview;
     SharedPreferences sharedpref;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        sharedview = findViewById(R.id.sharedview);
         final Button change = findViewById(R.id.change_button);
         change.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,14 +30,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        sharedview  = findViewById(R.id.sharedview);
     }
 
     @Override
     protected void onResume (){
         super.onResume();
 
-        sharedpref = getSharedPreferences("sharedpref", MODE_PRIVATE);
+        sharedpref = getSharedPreferences("preferences", MODE_PRIVATE);
         String login = sharedpref.getString("username", "unknown");
+
         sharedview.setText(login);
 
     }
