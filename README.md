@@ -1,39 +1,35 @@
 
 # Rapport
 
-**Skriv din rapport här!**
+Till denna uppgiften så började jag med att skapa en knapp för att kunna gå vidare till en annan acitivitymain, sedan skapade jag den andra acitivty
+och kopplade ihop knappen med funktionen detta kan man se i figur 1. det koden gör i figur 1 är att när man klickar på knappen så går man vidare till den
+activity man har valt. Efterdet skapade jag sharedprefrences i både second and main acitivty som man kan se i figur 2. Det denna koden gör är att den
+skriver ut den den första om man har något där men om det inte finns något att hämta så skriver den ut unknown istället. Jag kopplade ihop både edit text och text så att 
+den sparas på rätt ställe och sedan att den går vidare för att kunna visa på main sidan när man sparar på andra sidan. 
 
-_Du kan ta bort all text som finns sedan tidigare_.
+Detta kan man se på skrämdumparna som har tagits från appen. 
 
 ## Följande grundsyn gäller dugga-svar:
 
-- Ett kortfattat svar är att föredra. Svar som är längre än en sida text (skärmdumpar och programkod exkluderat) är onödigt långt.
-- Svaret skall ha minst en snutt programkod.
-- Svaret skall inkludera en kort övergripande förklarande text som redogör för vad respektive snutt programkod gör eller som svarar på annan teorifråga.
-- Svaret skall ha minst en skärmdump. Skärmdumpar skall illustrera exekvering av relevant programkod. Eventuell text i skärmdumpar måste vara läsbar.
-- I de fall detta efterfrågas, dela upp delar av ditt svar i för- och nackdelar. Dina för- respektive nackdelar skall vara i form av punktlistor med kortare stycken (3-4 meningar).
-
-Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
+fel.
 
 ```
-function errorCallback(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            // Geolocation API stöds inte, gör något
-            break;
-        case error.POSITION_UNAVAILABLE:
-            // Misslyckat positionsanrop, gör något
-            break;
-        case error.UNKNOWN_ERROR:
-            // Okänt fel, gör något
-            break;
-    }
-}
+    public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(intent);
+            }
+        });
 ```
-
+Figur 1.
+```
+sharedpref = getSharedPreferences("preferences", MODE_PRIVATE);
+        String login = sharedpref.getString("username", "unknown");
+```
+Figur 2.
 Bilder läggs i samma mapp som markdown-filen.
 
-![](android.png)
+![](MainView.png)
+![](SecondView.png)
 
 Läs gärna:
 
