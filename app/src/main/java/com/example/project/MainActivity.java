@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume (){
         super.onResume();
 
-
+        sharedpref = getSharedPreferences("sharedpref", MODE_PRIVATE);
         String login = sharedpref.getString("username", "unknown");
         sharedview.setText(login);
 
